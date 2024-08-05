@@ -20,13 +20,7 @@ if(!req.body) {
 }
 // Create a new User
 const user = new User({
-    tid: req.body.tid,
-    tname: req.body.tname,
-    taddress: req.body.taddress,
-    tage:req.body.tage,
-    tphone: req.body.tphone,
-    temail:req.body.temail,
-    tdob:req.body.tdob
+
 });
 // Save user in the database
 user.save()
@@ -69,13 +63,10 @@ if(!req.body) {
 }
 // Find user and update it with the request body
 User.findByIdAndUpdate(req.params.id, {
-  tid: req.body.tid,
-  tname: req.body.tname,
-  taddress: req.body.taddress,
-  tage:req.body.tage,
-  tphone:req.body.tphone,
-  temail:req.body.temail,
-  tdob:req.body.tdob,
+  first_name: req.body.first_name,
+  last_name: req.body.last_name,
+  email: req.body.email,
+  phone: req.body.phone
 }, {new: true})
 .then(user => {
  if(!user) {

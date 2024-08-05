@@ -1,33 +1,9 @@
 const mongoose = require('mongoose');
 const UserSchema = mongoose.Schema({
-    tid:{
-        type:Number,
-        required:true
-    },
-    tname: {
-        type:String,
-        required:true
-    },
-    taddress:{
-        type:String,
-        required:true
-    },
-    tage:{
-        type:Number,
-        required:true
-    },
-    tphone:{
-        type:Number,
-        required:true
-    },
-    temail:{
-        type:String,
-        required:true
-    },
-    tdob:{
-        type:Date,
-        required:true
-    },
+    first_name: String,
+    last_name: String,
+    email: String,
+    phone: Number,
     is_active:  { type: Boolean, default: false },
     is_verified:  { type: Boolean, default: false },
     is_deleted:  { type: Boolean, default: false }
@@ -35,4 +11,4 @@ const UserSchema = mongoose.Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Topper', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
